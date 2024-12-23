@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Customer Reviews | Salon</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .review-card {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card .rating {
+            color: #f39c12;
+        }
+
+        .review-card .review-text {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .review-card .review-author {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .review-form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .review-form textarea {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+            resize: none;
+        }
+
+        .review-form input[type="text"] {
+            border-radius: 8px;
+        }
+
+        .submit-review-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+        }
+
+        .submit-review-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .rating-stars {
+            font-size: 1.5rem;
+        }
+
+        .rating-stars i {
+            color: #f39c12;
+            cursor: pointer;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Section Header -->
+        <h2 class="section-header">Customer Reviews</h2>
+
+        <!-- Review Form -->
+        <section class="review-form">
+            <h3>Submit Your Review</h3>
+            <form id="reviewForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <div class="rating-stars" id="rating">
+                        <i class="fa fa-star" data-value="1"></i>
+                        <i class="fa fa-star" data-value="2"></i>
+                        <i class="fa fa-star" data-value="3"></i>
+                        <i class="fa fa-star" data-value="4"></i>
+                        <i class="fa fa-star" data-value="5"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review">Your Review</label>
+                    <textarea class="form-control" id="review" placeholder="Write your review" required></textarea>
+                </div>
+                <button type="submit" class="submit-review-btn">Submit Review</button>
+            </form>
+        </section>
+
+        <!-- Reviews List -->
+        <section id="reviews-list">
+            <div class="review-card">
+                <div class="review-author">Jane Doe</div>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                </div>
+                <div class="review-text">I had a fantastic experience at the salon! The staff were friendly and the service was excellent. Highly recommend!</div>
+            </div>
+            <div class="review-card">
+                <div class="review-author">John Smith</div>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <div class="review-text">Good service, but the wait time was a bit long. Overall, satisfied with my haircut.</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Beauty Salon. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Font Awesome for star icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- JavaScript for Review Submission and Rating -->
+    <script>
+        // Add event listener to each star for rating
+        const stars = document.querySelectorAll('.rating-stars i');
+        let selectedRating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                selectedRating = parseInt(star.getAttribute('data-value'));
+                updateStars(selectedRating);
+            });
+        });
+
+        function updateStars(rating) {
+            stars.forEach(star => {
+                if (parseInt(star.getAttribute('data-value')) <= rating) {
+                    star.classList.add('fa-star');
+                    star.classList.remove('fa-star-o');
+                } else {
+                    star.classList.add('fa-star-o');
+                    star.classList.remove('fa-star');
+                }
+            });
+        }
+
+        // Handle review submission
+        const reviewForm = document.getElementById('reviewForm');
+        reviewForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const reviewText = document.getElementById('review').value;
+            
+            if (selectedRating === 0 || name === '' || reviewText === '') {
+                alert('Please fill out all fields and provide a rating.');
+                return;
+            }
+
+            const newReview = document.createElement('div');
+            newReview.classList.add('review-card');
+            newReview.innerHTML = `
+                <div class="review-author">${name}</div>
+                <div class="rating">
+                    ${getRatingStars(selectedRating)}
+                </div>
+                <div class="review-text">${reviewText}</div>
+            `;
+
+            document.getElementById('reviews-list').appendChild(newReview);
+
+            // Reset form
+            document.getElementById('name').value = '';
+            document.getElementById('review').value = '';
+            selectedRating = 0;
+            updateStars(0);
+        });
+
+        function getRatingStars(rating) {
+            let starsHtml = '';
+            for (let i = 1; i <= 5; i++) {
+                if (i <= rating) {
+                    starsHtml += '<i class="fa fa-star"></i>';
+                } else {
+                    starsHtml += '<i class="fa fa-star-o"></i>';
+                }
+            }
+            return starsHtml;
+        }
+    </script>
+
+</body>
+</html>

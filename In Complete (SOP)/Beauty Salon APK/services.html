@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Beauty Service Categories</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 70px;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Custom CSS for Navbar */
+        .navbar {
+            /* background-color: #28cf97; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #0c93ee33;
+        }
+
+        .nav-link{
+            font-family: "Special Elite", serif;
+            font-weight: 400;
+            font-style:normal;
+            font-size: 125%;
+            margin: 0 20px;
+            color: red;
+        }
+
+        .navbar-brand img{
+            /* font-size: 24px; */
+            /* font-weight: bold; */
+            /* mix-blend-mode:color-burn; */
+            border-radius: 20px 2px 20px 20px;
+        }
+        /* .navbar-nav .nav-link {
+            color: white !important;
+        } */
+        .navbar-nav .nav-link:hover {
+            background-color: #f39c12 ;
+            border-radius: 10px;
+            color: red;
+
+        }
+
+         /* Banner image styles */
+         .banner-img {
+            width: 100%;
+            height: 40%;
+        }
+
+        
+
+
+        /* Category Card Styling */
+        .category-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category-card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category-card-body h5 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .category-card-body p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .category-btn-container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .category-btn {
+            width: 22%;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .category-btn:hover {
+            background-color: #e9ecef;
+        }
+
+        .category-btn i {
+            font-size: 3rem;
+            color: #007bff;
+        }
+
+        .category-btn p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        /* Title */
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 2rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="https://cdn.vectorstock.com/i/500p/50/03/calligraphy-logo-beauty-salon-vector-6655003.jpg" alt="Brand logo" width="100" height="50" ></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About-Us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Review.html">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h2>Beauty Service Categories</h2>
+
+    <!-- Category Cards -->
+    <div class="container">
+        <div class="row category-btn-container">
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-spa"></i>
+                    <p>Facial Treatments</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-scissors"></i>
+                    <p>Haircuts & Styling</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-paint-brush"></i>
+                    <p>Makeup Services</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <p>Manicures & Pedicures</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-archway"></i>
+                    <p>Body Treatments</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-teeth"></i>
+                    <p>Teeth Whitening</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-sun"></i>
+                    <p>Tanning Services</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-btn" onclick="window.location.href='#'">
+                    <i class="fas fa-user-nurse"></i>
+                    <p>Beauty Consultations</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Appointment Booking</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .time-slot-btn {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .time-slot-btn:hover {
+            background-color: #e9ecef;
+        }
+
+        .time-slot-btn.selected {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .booking-form {
+            margin-top: 40px;
+        }
+
+        .form-title {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            font-size: 1rem;
+        }
+
+        .alert-success {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="text-center">Appointment Booking</h2>
+
+        <!-- Date Selector -->
+        <div class="form-group">
+            <label for="appointment-date">Select Appointment Date:</label>
+            <input type="date" class="form-control" id="appointment-date" onchange="loadTimeSlots()">
+        </div>
+
+        <!-- Time Slots -->
+        <div id="time-slots-container" class="row">
+            <!-- Time slots will be loaded dynamically here -->
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form" id="booking-form" style="display: none;">
+            <h3 class="form-title">Confirm Your Appointment</h3>
+            <div class="form-group">
+                <label for="customer-name">Your Name:</label>
+                <input type="text" class="form-control" id="customer-name" required>
+            </div>
+            <div class="form-group">
+                <label for="customer-phone">Your Phone Number:</label>
+                <input type="text" class="form-control" id="customer-phone" required>
+            </div>
+            <button class="btn btn-primary" onclick="bookAppointment()">Book Appointment</button>
+        </div>
+
+        <!-- Success Message -->
+        <div class="alert-success" id="success-message" style="display: none;">
+            <p>Your appointment has been successfully booked!</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Function to load available time slots for the selected date
+        function loadTimeSlots() {
+            const date = document.getElementById("appointment-date").value;
+            const timeSlotsContainer = document.getElementById("time-slots-container");
+            timeSlotsContainer.innerHTML = ''; // Clear previous slots
+
+            if (!date) {
+                alert("Please select a date.");
+                return;
+            }
+
+            // Sample time slots (these could be fetched from a backend API)
+            const availableSlots = [
+                "09:00 AM", "10:00 AM", "11:00 AM", 
+                "12:00 PM", "01:00 PM", "02:00 PM", 
+                "03:00 PM", "04:00 PM", "05:00 PM"
+            ];
+
+            availableSlots.forEach(slot => {
+                const slotButton = document.createElement("button");
+                slotButton.classList.add("col-md-4", "time-slot-btn");
+                slotButton.innerText = slot;
+                slotButton.onclick = () => selectTimeSlot(slotButton, slot);
+                timeSlotsContainer.appendChild(slotButton);
+            });
+
+            // Show the booking form
+            document.getElementById("booking-form").style.display = "block";
+            document.getElementById("success-message").style.display = "none";
+        }
+
+        // Function to select a time slot
+        function selectTimeSlot(button, slot) {
+            const allButtons = document.querySelectorAll(".time-slot-btn");
+            allButtons.forEach(btn => btn.classList.remove("selected"));
+            button.classList.add("selected");
+            window.selectedSlot = slot; // Store the selected slot globally
+        }
+
+        // Function to book the appointment
+        function bookAppointment() {
+            const name = document.getElementById("customer-name").value;
+            const phone = document.getElementById("customer-phone").value;
+            const date = document.getElementById("appointment-date").value;
+
+            // Validate inputs
+            if (!name || !phone || !window.selectedSlot || !date) {
+                alert("Please fill in all fields and select a time slot.");
+                return;
+            }
+
+            // In a real scenario, you would send this data to the server here (e.g., via AJAX)
+            console.log(`Appointment booked: ${name}, ${phone}, ${date}, ${window.selectedSlot}`);
+
+            // Show success message
+            document.getElementById("booking-form").style.display = "none";
+            document.getElementById("success-message").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>User Profile | Salon</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .profile-info, .appointment-history, .preferences {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-info .form-control {
+            border-radius: 8px;
+        }
+
+        .preferences ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .preferences li {
+            margin-bottom: 10px;
+        }
+
+        .preferences button {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .preferences button:hover {
+            background-color: #0056b3;
+        }
+
+        .appointment-table th, .appointment-table td {
+            text-align: center;
+        }
+
+        .appointment-table td {
+            vertical-align: middle;
+        }
+
+        .appointment-history table {
+            width: 100%;
+        }
+
+        /* Footer Styling */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- User Profile Section -->
+    <div class="container">
+        <h2 class="section-header">User Profile</h2>
+
+        <!-- Profile Information -->
+        <section class="profile-info">
+            <h3>Profile Information</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" class="form-control" id="name" value="Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" class="form-control" id="email" value="janedoe@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" class="form-control" id="phone" value="9999922222" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Appointment History -->
+        <section class="appointment-history">
+            <h3>Appointment History</h3>
+            <table class="table table-striped appointment-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Service</th>
+                        <th>Stylist</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>12/12/2024</td>
+                        <td>Haircut</td>
+                        <td>Jane Smith</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>01/05/2024</td>
+                        <td>Facial</td>
+                        <td>John Doe</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>03/10/2023</td>
+                        <td>Pedicure</td>
+                        <td>Emily Johnson</td>
+                        <td>Cancelled</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- User Preferences -->
+        <section class="preferences">
+            <h3>Preferences</h3>
+            <ul>
+                <li>
+                    <label for="newsletter">Receive Newsletter</label>
+                    <input type="checkbox" id="newsletter" checked>
+                </li>
+                <li>
+                    <label for="sms-notifications">SMS Notifications</label>
+                    <input type="checkbox" id="sms-notifications" checked>
+                </li>
+                <li>
+                    <label for="email-updates">Receive Email Updates</label>
+                    <input type="checkbox" id="email-updates" checked>
+                </li>
+            </ul>
+            <button type="button" onclick="savePreferences()">Save Preferences</button>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Beauty Salon. All rights reserved.</p>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for Preferences -->
+    <script>
+        function savePreferences() {
+            const newsletter = document.getElementById('newsletter').checked;
+            const smsNotifications = document.getElementById('sms-notifications').checked;
+            const emailUpdates = document.getElementById('email-updates').checked;
+
+            // Simulating saving preferences
+            alert("Preferences Saved!\n" +
+                  "Newsletter: " + (newsletter ? "Yes" : "No") + "\n" +
+                  "SMS Notifications: " + (smsNotifications ? "Yes" : "No") + "\n" +
+                  "Email Updates: " + (emailUpdates ? "Yes" : "No"));
+        }
+    </script>
+</body>
+</html>
