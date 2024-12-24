@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href=
+"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+          rel="stylesheet" integrity=
+"sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+          crossorigin="anonymous">
+    <script src=
+"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity=
+"sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" 
+            crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 class="text-success">
+            GeeksforGeeks
+        </h1>
+        <h2>
+            Bootstrap 5 Fullscreen Modal
+        </h2>
+
+        <button type="button" class="btn btn-primary" 
+                data-bs-toggle="modal" data-bs-target="#GFG">
+            Click Me
+        </button>
+
+        <div class="modal fade" id="GFG">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title " >
+                            GeeksforGeeks Java Development
+                        </h5>
+                        <button type="button" class="btn-close" 
+                                data-bs-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src=
+                                    "https://media.geeksforgeeks.org/wp-content/cdn-uploads/Java.png" 
+                             height="400px" width="400px" alt="Java" 
+                             class="d-block w-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
