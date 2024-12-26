@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Beauty Service Categories</title>
+   
+    <link rel="website icon" type="png" href="https://previews.123rf.com/images/butenkow/butenkow1511/butenkow151100071/48324057-beauty-female-face-logo-design-cosmetic-salon-logo-design-creative-woman-face-vector.jpg">
+    <!-- Google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Special+Elite&display=swap" rel="stylesheet">
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+ 
+    <!-- Custom CSS -->
+    <style>
+        body {
+            padding-top: 70px;
+            font-family: Arial, sans-serif;
+            /* background-color: #f8f9fa; */
+            background-image: url('https://img.freepik.com/free-photo/beauty-cosmetics-frame_23-2148598567.jpg?t=st=1735044291~exp=1735047891~hmac=f8bd38679a507ce855e2835c8a3cf34346a9656a6bbd18bf0b1db3cdb118499b&w=740');
+        }
+
+        /* Custom CSS for Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #0c93ee33;
+        }
+
+        .nav-link{
+            font-family: "Special Elite", serif;
+            font-weight: 400;
+            font-style:normal;
+            font-size: 125%;
+            margin: 0 20px;
+            color: red;
+        }
+
+        .navbar-brand img{
+            /* mix-blend-mode:color-burn; */
+            border-radius: 20px 2px 20px 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #f39c12 ;
+            border-radius: 10px;
+            color: red;
+        }
+
+         /* Banner image styles */
+         .banner-img {
+            width: 100%;
+            height: 40%;
+        }
+
+        .service-category {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .nav-link {
+            cursor: pointer;
+        }
+
+        .col-md-4:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="https://cdn.vectorstock.com/i/500p/50/03/calligraphy-logo-beauty-salon-vector-6655003.jpg" alt="Brand logo" width="100" height="50" ></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Booking.html">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About-Us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Review.html">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center my-5">Beauty Services</h1>
+    
+        <!-- Navigation Bar for Categories -->
+        <ul class="nav nav-pills justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" id="hair-tab" data-bs-toggle="pill" href="#hair">Hair</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="nails-tab" data-bs-toggle="pill" href="#nails">Nails</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="skincare-tab" data-bs-toggle="pill" href="#skincare">Skincare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="makeup-tab" data-bs-toggle="pill" href="#makeup">Makeup</a>
+          </li>
+        </ul>
+    
+        <!-- Tab Content for Each Service Category -->
+        <div class="tab-content">
+          
+          <!-- Hair Services -->
+          <div class="tab-pane fade show active" id="hair">
+            <div class="service-category text-center">
+              <h3>Hair Services</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                      <img src="https://img.freepik.com/free-vector/hand-drawn-hairdresser-cartoon-illustration_52683-150812.jpg?t=st=1735038912~exp=1735042512~hmac=40dd7d348d904f717f59eba4020dfb0510e5ba0fc8341457821b668d265f98de&w=740" class="card-img-top" alt="Haircut">
+                      <div class="card-body">
+                          <h5 class="card-title">Haircut</h5>
+                          <p class="card-text">Get a stylish haircut from our expert stylists.</p>
+                          <!-- Add the necessary attributes to trigger the modal -->
+                          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">View More</button>
+                      </div>
+                  </div>
+              </div>
+              
+              <!-- Fullscreen Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-fullscreen">
+                      <div class="modal-content">
+                          <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Haircut Details</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                              <h5>Get a stylish haircut from our expert stylists.</h5>
+                              <p>This service includes a professional haircut tailored to your style preferences. Our expert stylists will give you a fresh new look, whether you want something trendy, classic, or completely new!</p>
+                              <p>Price: $50</p>
+                              <p>Duration: 45 minutes</p>
+                              <p>Contact us today to book your appointment!</p>
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Book Now</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+                
+                  
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/free-photo/woman-with-medical-mask-getting-her-hair-dyed-by-hairdresser-home_23-2148817235.jpg?t=st=1735038798~exp=1735042398~hmac=76ea69b811e0f9b5c192ee6692b4533eb799a9b01f7fa63868f39e9936fb2ae6&w=740" class="card-img-top" alt="Hair Coloring">
+                    <div class="card-body">
+                      <h5 class="card-title">Hair Coloring</h5>
+                      <p class="card-text">Transform your look with vibrant hair colors.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/hairstylist-giving-finishing-touch-customer-beauty-salon_53876-131129.jpg?w=740" class="card-img-top" alt="Hair Styling">
+                    <div class="card-body">
+                      <h5 class="card-title">Hair Styling</h5>
+                      <p class="card-text">Perfect styling for any occasion.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Nails Services -->
+          <div class="tab-pane fade" id="nails">
+            <div class="service-category text-center">
+              <h3>Nail Services</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/hardware-manicure-removal-old-gel-varnish-salon-manicure-master-doing-beauty-procedure-client-closeup-top-view_201836-1422.jpg?w=740" class="card-img-top" alt="Manicure">
+                    <div class="card-body">
+                      <h5 class="card-title">Manicure</h5>
+                      <p class="card-text">Treat your hands to a relaxing manicure.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/foot-hands-nail-polish-pedicure-closeup-with-treatment-skin-dermatology-with-makeup-spa-beauty-wellness-people-with-cosmetics-product-color-self-care-cosmetology_590464-347234.jpg?w=740" class="card-img-top" alt="Pedicure">
+                    <div class="card-body">
+                      <h5 class="card-title">Pedicure</h5>
+                      <p class="card-text">Pamper your feet with a soothing pedicure.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/beautician-polishing-female-clients-nails-with-nail-file-beauty-salon_926199-3096550.jpg?w=740" class="card-img-top" alt="Nail Art">
+                    <div class="card-body">
+                      <h5 class="card-title">Nail Art</h5>
+                      <p class="card-text">Get creative and express yourself with beautiful nail art designs.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Skincare Services -->
+          <div class="tab-pane fade" id="skincare">
+            <div class="service-category text-center">
+              <h3>Skincare Services</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/beautiful-woman-face-skin-care-portrait-attractive-young-female-applying-cosmetics-cream_742418-95786.jpg?w=740" class="card-img-top" alt="Facial">
+                    <div class="card-body">
+                      <h5 class="card-title">Facial</h5>
+                      <p class="card-text">Rejuvenate your skin with a relaxing facial treatment.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/woman-beautician-light-with-skincare-ultrasound-facial-treatment-exfoliation-salon-microdermabrasion-spa-therapist-with-client-beauty-anti-aging-skin-repair-face-cleaning_590464-451683.jpg?w=740" class="card-img-top" alt="Chemical Peel">
+                    <div class="card-body">
+                      <h5 class="card-title">Chemical Peel</h5>
+                      <p class="card-text">Brighten your complexion with a safe chemical peel.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/free-photo/young-woman-having-cosmetic-treatment-wellness-center_23-2148825310.jpg?t=st=1735040301~exp=1735043901~hmac=6f5937c9d7a942e8767e60677087e5d1867aa4998064a34e885672009a5e17d3&w=740" class="card-img-top" alt="Anti-Aging">
+                    <div class="card-body">
+                      <h5 class="card-title">Anti-Aging</h5>
+                      <p class="card-text">Reduce the signs of aging with specialized treatments.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Makeup Services -->
+          <div class="tab-pane fade" id="makeup">
+            <div class="service-category text-center">
+              <h3>Makeup Services</h3>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/professional-makeup-artist-prepares-bride-special-event_1284935-3122.jpg?w=740" class="card-img-top" alt="Bridal Makeup">
+                    <div class="card-body">
+                      <h5 class="card-title">Bridal Makeup</h5>
+                      <p class="card-text">Get the perfect look for your big day.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/indian-makeup-artist-doing-beautiful-woman-makeup_601128-24805.jpg?w=740" class="card-img-top" alt="Party Makeup">
+                    <div class="card-body">
+                      <h5 class="card-title">Party Makeup</h5>
+                      <p class="card-text">Get glam for any special event or party.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img src="https://img.freepik.com/premium-photo/beauty-product-testing-session-with-female-model_1320336-19313.jpg?w=740" class="card-img-top" alt="Makeup Lesson">
+                    <div class="card-body">
+                      <h5 class="card-title">Makeup Lesson</h5>
+                      <p class="card-text">Learn professional makeup techniques from an expert.</p>
+                      <a href="#">
+                        <button class="btn btn-primary">View More</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          
+    
+        </div>
+      </div>
+
+    <!-- Bootstrap, jQuery, and Popper.js JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>
