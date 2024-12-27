@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+    <title>Beauty Salon</title>
+
+    <link rel="website icon" type="png" href="https://previews.123rf.com/images/butenkow/butenkow1511/butenkow151100071/48324057-beauty-female-face-logo-design-cosmetic-salon-logo-design-creative-woman-face-vector.jpg">
+    <!-- Google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">    
+   <!-- Bootstrap CSS -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Add padding to body to ensure content doesn't hide behind the fixed navbar */
+       body {
+           background-image: url('https://img.freepik.com/premium-photo/barbershop-blurred-background-hairdresser-hair-salon-barber-shop-men_152904-9383.jpg?w=740');
+            padding-top: 70px; 
+            font-family: "Roboto Slab", serif;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom CSS for Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 60px;
+            background-color: #ebad4e;
+        }
+
+        .nav-link{
+            font-family: "Roboto Slab", serif;
+            font-weight: 400;
+            font-style:normal;
+            font-size: 100%;
+            margin: 0 20px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .navbar-brand img{
+            border-radius: 20px 2px 20px 20px;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: #f39c12 ;
+            border-radius: 10px;
+            color: red;
+
+        }
+        
+         /* Banner image styles */
+         .banner-img {
+            width: 100%;
+            height: 40%;
+            object-fit:cover;
+        }
+
+          /* Set a fixed height for the carousel */
+        #promoCarousel {
+            height: 500px; /* Adjust this value as needed */
+            overflow: hidden; /* Hide the overflowed images */
+            margin-bottom: 50px;
+        }
+
+        .container{
+            margin-top: 150px;
+            margin-bottom: 10%;
+        }
+
+        .course{
+            text-align:center;
+            color:green;
+        }
+        .course1{
+            text-align:center;
+            font-family:Bradley Hand ITC;
+        }
+        .cours2{
+            margin-top:30px;
+            height: 100%;
+        }
+
+        .cours2{
+            position:relative;
+            margin-bottom:50px;
+            
+        }
+
+        .cours3{
+            -border:1px solid red;
+            position:absolute;
+            top:-100px;
+            opacity:0;
+            -bottom:100px;
+            -background-color:rgba(142,198,63,.8);
+            background-color:rgba(0,0,0,0.3);
+            color:white;
+            padding:20px;
+        }
+        .cours2:hover .cours3 {
+            opacity:1;
+            top:0px;
+            transition:1s;
+        }
+        .cours4{
+            position:absolute;
+            -border:1px solid red;
+            margin-top:-80px;
+            padding-top:20px;
+            width:100%;
+            height:80px;
+            opacity:0;
+            bottom:-50px;
+            background-color:rgba(142,198,63,.8);
+            background-color:rgba(0,0,0,0.3);
+        }
+        .cours2:hover .cours4{
+            opacity:1;
+            bottom:0;
+            transition:1s;
+        }
+        .cours2:hover .hover{
+            transform:scale(1.3);
+            transition:1s;
+        }
+        .cours7{
+            border:1px solid rgb(73,183,43);
+            background-color:rgb(73,183,43);
+            color:white;
+            font-size:18px;
+            padding:10px 15px;
+            border-radius:5px 20px;
+        }
+        .cours7:hover{
+            background-color:transparent;
+            color:rgb(73,183,43);
+            border:1px solid rgb(73,183,43);
+            transition:1s;
+        }
+
+        .cou:hover{
+            background-color:transparent !important;
+            color:rgb(237,78,110) !important;
+            border:1px solid rgb(237,78,110) !important;
+        }
+
+        footer{
+            background-color: 	#c5aa6a;
+            text-align: center;
+        }
+
+        .footer div{
+            display: block;
+        }
+
+        .footer a{
+            text-align: center;
+            margin: 0 20px;
+        }  
+        
+        .footer div a{
+            text-align: center;
+            text-decoration: none;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="https://cdn.vectorstock.com/i/500p/50/03/calligraphy-logo-beauty-salon-vector-6655003.jpg" alt="Brand logo" width="100" height="50" ></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Booking.html">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About-Us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Review.html">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+     <!-- Promotional Banners -->
+    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://www.shutterstock.com/shutterstock/photos/2067524369/display_1500/stock-vector-discount-horizontal-banner-with-realistic-false-lashes-lash-extension-tools-balloons-and-flowers-2067524369.jpg" class="banner-img" alt="Promo 1">
+            </div>
+            <div class="carousel-item ">
+                <img src="https://img.freepik.com/free-vector/asian-beauty-banners-design_23-2148739797.jpg?t=st=1734933436~exp=1734937036~hmac=f5daec92f099bf41a50cb97bccc365aec67dc4bcf3149b32f56980b499d5ea60&w=826" class="banner-img" alt="Promo 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/Beauty Salon APK  Updated  version Not Completed office @ 26-12-2024/images/freepik__adjust__46542.png" class="banner-img" alt="Promo 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://img.freepik.com/free-vector/realistic-beauty-sale-banner-with-offer_52683-94987.jpg?t=st=1734933549~exp=1734937149~hmac=50fa02c3128172f735a8917478e539ed8417e78f107d032bb0b3038033b5387d&w=996" class="banner-img" alt="Promo 3">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#promoCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#promoCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="cours2" style="overflow:hidden;">
+                <img class="hover" src="https://content.jdmagicbox.com/comp/service_catalogue/salons-attr-tan-removal-facial-spa1996-8.jpg" style="width:150%;height:300px;border:1px solid transparent;transition:1s;">
+                <div class="cours3">
+                    <h2 style="text-align:center;margin-top:-6px;color:rgb(237,78,110);">Facials & Skin Care</h2>
+                    <!-- <h5 style="text-align:center;"></h5> -->
+                    <h6 style="text-align:center;">Treat yourself to rejuvenating facials and skincare.</h6>
+                </div>
+                    
+                <div class="cours4 text-center">
+                    <button class="cou" style="border:1px solid transparent;padding:10px 20px;font-size:16px;border-radius:10%;background-color:rgb(237,78,110);color:white;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    View More
+                    </button>
+                </div>
+                        
+                <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header position-relative pb-0">
+                                    <h2 class="fs-5">Facials & Skin Care</h2>
+                                    <!-- Close Button in the Modal Body -->
+                                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <br/> 
+                                <p class="p-3 mb-5">Indulge in our luxurious facials and skin care services, designed to rejuvenate and refresh your skin. Our estheticians use only the finest products to provide a customized facial experience.</p>                       
+                                    <ul class="mb-5">
+                                        <li>Classic Facial</li>
+                                        <li>Microneedling Facial</li>
+                                        <li>LED Light Therapy Facial</li>
+                                        <li>IPL Laser Resurfacing</li>
+                                        <li>Microdermabrasion Facial</li>
+                                        <li>Dermaplaning Facial</li>
+                                        <li>Chemical Peel Facial</li>
+                                        <li>Hydrating Facial</li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        
+            <div class="col-md-4">
+                <div class="cours2" style="overflow:hidden;">
+                    <img class="hover" src="https://as1.ftcdn.net/v2/jpg/11/34/49/82/1000_F_1134498240_4YAXsN9WTcHJ9sGqxH0fx3s0OaONVxIU.jpg" style="width:150%;height:300px;border:1px solid transparent;transition:1s;">
+                    <div class="cours3">
+                        <h2 style="text-align:center;margin-top:-6px;color:rgb(237,78,110);">Nail Services</h2>
+                        <h5 style="text-align:center;">Manicures, pedicures, and nail art for all styles.</h5>
+                    </div>
+                    <div class="cours4 text-center">
+                        <button class="cou" style="border:1px solid transparent;padding:10px 20px;font-size:16px;border-radius:10%;background-color:rgb(237,78,110);color:white;" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                            View More
+                        </button>
+                    </div>
+            
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header position-relative pb-0">
+                                    <h2 class="fs-5">Nail Services</h2>
+                                    <!-- Close Button in the Modal Body -->
+                                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <br/> 
+                                <p class="p-3 mb-5">From classic manicures and pedicures to trendy nail art, we offer a full range of nail services to suit your needs. Relax and unwind as our nail technicians pamper you.</p>
+                                <ul class="mb-3">
+                                    <li>Gel Nails</li>
+                                    <li>Classic Manicure</li>
+                                    <li>Pedicure</li>
+                                    <li>Nail Art (Custom Designs)</li>
+                                    <li>French Manicure</li>
+                                    <li>Acrylic Nails</li>
+                                    <li>Polish Change</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="col-md-4">
+                <div class="cours2" style="overflow:hidden;">
+                        <img class="hover" src="https://img.freepik.com/free-photo/woman-washing-head-hairsalon_1157-27181.jpg?t=st=1735136756~exp=1735140356~hmac=20850650ae46fb4ee9e824259f6aa1d70c1b49364a86aac92d892ebf636fd97b&w=740" style="width:150%;height:300px;border:1px solid transparent;transition:1s;">
+                        <div class="cours3">
+                            <h2 style="text-align:center;margin-top:-6px;color:rgb(237,78,110);">Hair Care</h2>
+                                <h5 style="text-align:center;">Explore hair styling, cuts, treatments & more.</h5>                        
+                        </div>
+                        <div class="cours4 text-center">
+                            <button class="cou" style="border:1px solid transparent;padding:10px 20px;font-size:16px;border-radius:10%;background-color:rgb(237,78,110);color:white;" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                            View More
+                            </button>
+                        </div>     
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header position-relative pb-0">
+                                    <h2 class="fs-5">Hair Care services</h2>
+                                    <!-- Close Button in the Modal Body -->
+                                    <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <br/> 
+                                <p class="p-3 mb-5">Explore a wide variety of hair care treatments including cuts, coloring, and styling. Whether you're looking for a quick trim or a full makeover, our expert stylists are here to help.</p>                       
+                                <ul mb-3>
+                                    <li>Haircuts & Styling</li>
+                                    <li>Hair Coloring</li>
+                                    <li>Deep Conditioning</li>
+                                    <li>Blowouts</li>
+                                    <li>Keratin Treatments</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Footer  -->
+    <footer class="footer">
+        <div>
+            <a href="services.html">Service</a>
+            <a href="About-Us.html">About-Us</a>
+            <a href="contact-us.html">Contact-Us</a>
+            <a href="profile.html">Profile</a>
+            <a href="Review.html">Review</a>
+        </div><br/>
+        <p>&copy; 2024 Beaty Saloon | All Rights Reserved</p>
+    </footer>
+
+
+   
+    <!-- Bootstrap, jQuery, and Popper.js JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
