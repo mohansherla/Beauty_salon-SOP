@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Booking</title>
+    <link rel="website icon" type="png" href="https://previews.123rf.com/images/butenkow/butenkow1511/butenkow151100071/48324057-beauty-female-face-logo-design-cosmetic-salon-logo-design-creative-woman-face-vector.jpg">
+    <!-- Google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-photo/paperwork-mobile-phone-used-scheduling_53876-123763.jpg?t=st=1735203001~exp=1735206601~hmac=6f94d6ecf191a0e46cdd900a6641a57e34e436bda4944e4c0bacae176ee8305e&w=740');
+            padding-top: 70px; 
+            font-family: "Roboto Slab", serif;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom CSS for Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: #ebad4e;
+        }
+
+        .nav-link{
+            font-family: "Roboto Slab", serif;
+            font-weight: 400;
+            font-style:normal;
+            font-size: 100%;
+            margin: 0 20px;
+            color: red;
+            cursor: pointer;
+        }
+
+        .navbar-brand img {
+            border-radius: 20px 2px 20px 20px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #f39c12 ;
+            border-radius: 10px;
+            color: red;
+        }
+
+        /* Banner image styles */
+        .banner-img {
+            width: 100%;
+            height: 40%;
+            object-fit:cover;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .time-slot-btn {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .time-slot-btn:hover {
+            background-color: #e9ecef;
+        }
+
+        .time-slot-btn.selected {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .booking-form {
+            margin-top: 40px;
+        }
+
+        .form-title {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .modal-body {
+            font-size: 1rem;
+        }
+
+        .alert-success {
+            margin-top: 20px;
+            font-size: 1.1rem;
+            text-align: center;
+            color: #28a745;
+        }
+
+        .service-option {
+            cursor: pointer;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-option:hover {
+            background-color: #f39c12;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img src="https://cdn.vectorstock.com/i/500p/50/03/calligraphy-logo-beauty-salon-vector-6655003.jpg" alt="Brand logo" width="100" height="50" ></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Booking.html">Bookings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="About-Us.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Review.html">Reviews</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2 class="text-center">Appointment Booking</h2>
+
+        <!-- Service Selection Dropdown -->
+        <div class="form-group" id="service-group">
+            <label for="service">Choose Service:</label>
+            <select id="service" class="form-control" onchange="selectService()">
+                <option value="" disabled selected>Select a service</option>
+                <option value="Hair Services">Hair Services</option>
+                <option value="Nails Services">Nails Services</option>
+                <option value="Skin Care Services">Skin Care Services</option>
+                <option value="MakeUp Service">MakeUp Service</option>
+            </select>
+        </div>
+
+        <!-- Date Selector -->
+        <div id="date-selector" style="display:none;">
+            <div class="form-group">
+                <label for="appointment-date">Select Appointment Date:</label>
+                <input type="date" class="form-control" id="appointment-date" onchange="loadTimeSlots()">
+            </div>
+        </div>
+
+        <!-- Time Selector -->
+        <div id="time-selector" style="display:none;">
+            <div class="form-group">
+                <label for="appointment-time">Choose Time:</label>
+                <select class="form-control" id="appointment-time">
+                    <!-- Time options will be dynamically added here -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Confirm Appointment Button -->
+        <div id="confirm-btn-container" style="display:none;">
+            <button class="btn btn-primary" onclick="confirmAppointment()">Confirm Appointment</button>
+        </div>
+
+        <!-- Confirmation Message -->
+        <!-- <div id="appointment-confirmation" class="alert-success" style="display: none;"> -->
+            
+            <!-- <p>Appointment Booked!<br>Service: <span id="confirm-service"></span><br>Date: <span id="confirm-date"></span><br>Time Slot: <span id="confirm-slot"></span></p> -->
+        <!-- </div> -->
+        <div id="appointment-confirmation" class="alert alert-success" style="display: none;">
+          <strong>Success!</strong> Your appointment is confirmed.
+      </div>
+      
+    </div>
+
+    <!-- Bootstrap, jQuery, and Popper.js JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <script>
+        let selectedService = "";
+        let selectedDate = "";
+        let selectedSlot = "";
+
+        function selectService() {
+            selectedService = document.getElementById("service").value;
+            if (selectedService) {
+                document.getElementById("service-group").style.display = "none";
+                document.getElementById("date-selector").style.display = "block";
+            }
+        }
+
+        function loadTimeSlots() {
+            const dateInput = document.getElementById("appointment-date");
+            selectedDate = dateInput.value; // Store the selected date
+
+            const selectedDateObj = new Date(selectedDate);
+            const dayOfWeek = selectedDateObj.getDay();
+            if (dayOfWeek === 6 || dayOfWeek === 0) {
+                alert("Please select a weekday (Monday to Friday).");
+                return;
+            }
+
+            const today = new Date();
+            const maxDate = new Date();
+            maxDate.setDate(today.getDate() + 30); 
+
+            const formattedToday = today.toISOString().split('T')[0];
+            const formattedMaxDate = maxDate.toISOString().split('T')[0];
+
+            dateInput.setAttribute("min", formattedToday);
+            dateInput.setAttribute("max", formattedMaxDate);
+
+            loadTimeSlotsDropdown();
+}
+
+        function loadTimeSlotsDropdown() {
+            const timeSelect = document.getElementById("appointment-time");
+            timeSelect.innerHTML = '';
+
+            const timeSlots = [
+                "09:00 AM", "10:00 AM", "11:00 AM", 
+                "12:00 PM", "01:00 PM", "02:00 PM", 
+                "03:00 PM", "04:00 PM", "05:00 PM"
+            ];
+
+            timeSlots.forEach(slot => {
+                const option = document.createElement("option");
+                option.value = slot;
+                option.textContent = slot;
+                timeSelect.appendChild(option);
+            });
+
+            document.getElementById("time-selector").style.display = "block";
+            document.getElementById("confirm-btn-container").style.display = "block";
+            document.getElementById("date-selector").style.display = "none";
+        }
+
+        function confirmAppointment() {
+            selectedSlot = document.getElementById("appointment-time").value;
+            
+            // Store appointment in localStorage
+            const appointmentDetails = {
+                service: selectedService,
+                date: selectedDate,
+                slot: selectedSlot
+            };
+
+            let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+            appointments.push(appointmentDetails);
+            localStorage.setItem("appointments", JSON.stringify(appointments));
+
+            // Update the confirmation message with the specific text inside the alert
+            document.getElementById("appointment-confirmation").innerHTML = `
+                <strong>Success!</strong> Your appointment is confirmed!<br>
+                <strong>Service:</strong> ${selectedService}<br>
+                <strong>Date:</strong> ${selectedDate}<br>
+                <strong>Time Slot:</strong> ${selectedSlot}
+            `;
+
+            document.getElementById("appointment-confirmation").style.display = "block";
+            document.getElementById("confirm-btn-container").style.display = "none";
+
+            window.alert("Appointment confirmed!");
+        }
+    </script>
+</body>
+</html>
